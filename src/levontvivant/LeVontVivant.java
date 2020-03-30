@@ -1,21 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package levontvivant;
 
-/**
- *
- * @author JoelG
- */
+import LeVonVivantMenus.Menu;
+import LeVonVivantRobot.Robot;
+import java.util.Scanner;
+
 public class LeVontVivant {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        System.out.println("Joel Conectado");
+        Scanner teclado = new Scanner(System.in);
+        //variables generales INICIO
+        String t= "LeVonVivantLerma";
+        String nom="Arturito";
+        int cod=1;
+        int opc=0;
+        //variables generales FIN
+        
+        //robot INICO
+        Robot R1=new Robot(nom,t,cod);
+        //robot FIN
+        
+        //menus INICIO y acciones
+        Menu menu1 = new Menu();
+        do
+        {
+            menu1.MenuPrincipal();
+            opc=teclado.nextInt();
+            if(opc==1)
+            {
+            }
+            else
+            {
+                if(opc==2)
+                {
+                }
+                else
+                {
+                    if(opc==3)
+                    {
+                    }
+                    else
+                    {
+                    }
+                }
+            }    
+        }
+        while (opc!=4);
+        //menus FIN
     }
     
 }
