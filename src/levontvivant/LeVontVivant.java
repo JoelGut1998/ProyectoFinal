@@ -56,24 +56,28 @@ public class LeVontVivant {
                         opc=teclado.nextInt();
                         if(opc==1)
                         {
+                            do
+                            {
                             menu1.MenuPersonalizableCafeCaliente(gazucar, gcafe, tam, gcrema);
                             opc=teclado.nextInt();
+                            
                             while(opc==1)
                             {
-                                opc=5;
+                                opc=6;
                             }
                             while(opc==2)
                             {
-                                opc=5;
+                                opc=6;
                             }
                             while(opc==3)
                             {
-                                opc=5;
+                                opc=6;
                             }
                             while(opc==4)
                             {
-                                opc=5;
+                                opc=6;
                             }
+                            }while(opc!=5);
                         }
                         if(opc==1 || opc==2 || opc==5)
                         {

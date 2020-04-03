@@ -79,6 +79,7 @@ public class Menu {
         System.out.println("**Cantidad de crema cafetera**");
         System.out.println("Actual: "+Gcrema+" g");
         System.out.println("Presione '4' para modificar la crema para cafe");
+        System.out.println("Presione '5' para terminar de perzonalizar su cafe");
         System.out.println("=o=o=o=o=o=o=o=o=o=");
         System.out.println("Porfavor indique el numero de la opcion que desea en su teclado");
     }
