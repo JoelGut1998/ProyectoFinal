@@ -14,6 +14,9 @@ public class Robot{
        
 //Constructor para crear un nuevo robot INICO
      public Robot(String nom, String t, int cod){
+         this.nombre=nom;
+         this.tienda=t;
+         this.codigo=cod;
      }
 //Constructor para crear un nuevo robot FIN
 
