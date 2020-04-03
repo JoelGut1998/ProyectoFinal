@@ -7,7 +7,6 @@ public class LeVonVivantCafeCalienteCapuccino extends LeVonVivantCafeCaliente {
     private int azucar;
     private int cafe;
     private int tamano;
-    private String hola;
     
     public int setCrema(int gcrema)
     {
