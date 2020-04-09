@@ -17,15 +17,27 @@ public class LeVontVivant {
         String nom="Arturito";
         int cod=1;
         int opc=0;
+        int gcrema=0;
+        int gcafe=0;
+        int gazucar=0;
+        int tam=0;
+        float cant=0f;
+        float pexazucar=0f;
+        float penvase=0f;
+        float pexcrema=0f;
+        float pexcafe=0f;
+        float TotalCafesCalientes=0f;
+        float CafesCalientesPedidos=0f;
+        float TotalExtras=0f;
         //variables generales FIN
         
         //robot INICO
-        Robot R1=new Robot(nom,t,cod);
+        Robot R1=new Robot(nom,t,cod);  
         //robot FIN
         
         //menus INICIO y acciones
         Menu menu1 = new Menu();
-        do
+        do               
         {
             menu1.MenuPrincipal();
             opc=teclado.nextInt();
@@ -39,56 +51,211 @@ public class LeVontVivant {
                     menu1.MenuCafeFrio();
                     opc=teclado.nextInt();
                 }
-                while(opc!=3 && opc==2)
+                while(opc!=3 && opc==2)//Cafes calientes INICIO
                 {
                     menu1.MenuCafeCaliente();
                     opc=teclado.nextInt();
-                    while(opc!=4 && opc==1)
+                    while(opc!=4 && opc==1)//ordenar Cafe capuccino INICIO
                     {
                         do
                         {
+                        cant=menu1.Cantidad(1);
+                        for(float i=1;i<=cant;i=i+1){
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("Preparacion de cafe No. "+i+"/"+cant);
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("");
                         LeVonVivantCafeCalienteCapuccino capuccino = new LeVonVivantCafeCalienteCapuccino();
-                        int gcrema=capuccino.setCrema(10);
-                        int gcafe=capuccino.setCafe(25);
-                        int gazucar=capuccino.setAzucar(5);
-                        int tam=capuccino.setTamano(255);
-                        menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema);
+                        gcrema=capuccino.setCrema(10);
+                        gcafe=capuccino.setCafe(25);
+                        gazucar=capuccino.setAzucar(5);
+                        tam=capuccino.setTamano(255);
+                        menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema, "Convencional");
                         opc=teclado.nextInt();
                         if(opc==1)
                         {
                             do
                             {
-                            menu1.MenuPersonalizableCafeCaliente(gazucar, gcafe, tam, gcrema);
+                            menu1.MenuPersonalizableCafeCaliente(gazucar, gcafe, tam, gcrema,"Convencional");
                             opc=teclado.nextInt();
                             
                             while(opc==1)
                             {
+                                String tazucar=menu1.TipoAzucar("Convencional");
+                                gazucar=menu1.CantidadAzucar(gazucar);
+                                pexazucar=menu1.PrecioExtraAzucar(0, gazucar);
                                 opc=6;
                             }
                             while(opc==2)
                             {
+                                gcafe=menu1.CantidadCafe(gcafe);
                                 opc=6;
+                                pexcafe=menu1.CantidadCafe(gcafe);
                             }
                             while(opc==3)
                             {
+                                tam=menu1.TamEnvase(tam);
                                 opc=6;
                             }
                             while(opc==4)
                             {
+                                gcrema=menu1.CantidadCrema(gcrema);
                                 opc=6;
+                                pexcrema=menu1.PrecioExtraCrema(0, gcrema);
                             }
                             }while(opc!=5);
                         }
-                        if(opc==1 || opc==2 || opc==5)
+                        }
+                            if(opc==1 || opc==2 || opc==6)
                         {
                         //poner aqui agregar a la charola
+                            penvase=menu1.PrecioEnvase(0, tam);
+                            CafesCalientesPedidos=R1.OrdenarCafeCapuccino(cant,penvase);
+                            TotalCafesCalientes=R1.CalcularTotalCafesCalientes(TotalCafesCalientes, CafesCalientesPedidos);
+                            TotalExtras=R1.CalcularTotalExtras(pexazucar, pexcrema, pexcafe);
+                            opc=3;
                         //poner aqui agregar a charola
                         }
-                        opc=3;
                         }while(opc!=3);
+                        opc=5;
+                    }//Ordenar cafe capuccino FIN
+                    while(opc!=4 && opc==2)//ordenar Cafe Mokaccino INICIO
+                    {
+                        do
+                        {
+                        cant=menu1.Cantidad(1);
+                        for(float i=1;i<=cant;i=i+1){
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("Preparacion de cafe No. "+i+"/"+cant);
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("");
+                        LeVonVivantCafeCalienteCapuccino capuccino = new LeVonVivantCafeCalienteCapuccino();
+                        gcrema=capuccino.setCrema(15);
+                        gcafe=capuccino.setCafe(15);
+                        gazucar=capuccino.setAzucar(5);
+                        tam=capuccino.setTamano(955);
+                        menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema, "Convencional");
+                        opc=teclado.nextInt();
+                        if(opc==1)
+                        {
+                            do
+                            {
+                            menu1.MenuPersonalizableCafeCaliente(gazucar, gcafe, tam, gcrema,"Convencional");
+                            opc=teclado.nextInt();
+                            
+                            while(opc==1)
+                            {
+                                String tazucar=menu1.TipoAzucar("Convencional");
+                                gazucar=menu1.CantidadAzucar(gazucar);
+                                pexazucar=menu1.PrecioExtraAzucar(0, gazucar);
+                                opc=6;
+                            }
+                            while(opc==2)
+                            {
+                                gcafe=menu1.CantidadCafe(gcafe);
+                                opc=6;
+                                pexcafe=menu1.CantidadCafe(gcafe);
+                            }
+                            while(opc==3)
+                            {
+                                tam=menu1.TamEnvase(tam);
+                                opc=6;
+                            }
+                            while(opc==4)
+                            {
+                                gcrema=menu1.CantidadCrema(gcrema);
+                                opc=6;
+                                pexcrema=menu1.PrecioExtraCrema(0, gcrema);
+                            }
+                            }while(opc!=5);
+                        }
+                        }
+                            if(opc==1 || opc==2 || opc==6)
+                        {
+                        //poner aqui agregar a la charola
+                            penvase=menu1.PrecioEnvase(0, tam);
+                            CafesCalientesPedidos=R1.OrdenarCafeMokaccino(cant,penvase);
+                            TotalCafesCalientes=R1.CalcularTotalCafesCalientes(TotalCafesCalientes, CafesCalientesPedidos);
+                            TotalExtras=R1.CalcularTotalExtras(pexazucar, pexcrema, pexcafe);
+                            opc=3;
+                        //poner aqui agregar a charola
+                        }
+                        }while(opc!=3);
+                        opc=5;
+                    }//Ordenar cafe Mokaccino FIN
+                    while(opc!=4 && opc==3)//ordenar Cafe Americano INICIO
+                    {
+                        do
+                        {
+                        cant=menu1.Cantidad(1);
+                        for(float i=1;i<=cant;i=i+1){
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("Preparacion de cafe No. "+i+"/"+cant);
+                        System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+                        System.out.println("");
+                        LeVonVivantCafeCalienteCapuccino capuccino = new LeVonVivantCafeCalienteCapuccino();
+                        gcrema=capuccino.setCrema(0);
+                        gcafe=capuccino.setCafe(30);
+                        gazucar=capuccino.setAzucar(5);
+                        tam=capuccino.setTamano(655);
+                        menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema, "Convencional");
+                        opc=teclado.nextInt();
+                        if(opc==1)
+                        {
+                            do
+                            {
+                            menu1.MenuPersonalizableCafeCaliente(gazucar, gcafe, tam, gcrema,"Convencional");
+                            opc=teclado.nextInt();
+                            
+                            while(opc==1)
+                            {
+                                String tazucar=menu1.TipoAzucar("Convencional");
+                                gazucar=menu1.CantidadAzucar(gazucar);
+                                pexazucar=menu1.PrecioExtraAzucar(0, gazucar);
+                                opc=6;
+                            }
+                            while(opc==2)
+                            {
+                                gcafe=menu1.CantidadCafe(gcafe);
+                                opc=6;
+                                pexcafe=menu1.CantidadCafe(gcafe);
+                            }
+                            while(opc==3)
+                            {
+                                tam=menu1.TamEnvase(tam);
+                                opc=6;
+                            }
+                            while(opc==4)
+                            {
+                                gcrema=menu1.CantidadCrema(gcrema);
+                                opc=6;
+                                pexcrema=menu1.PrecioExtraCrema(0, gcrema);
+                            }
+                            }while(opc!=5);
+                        }
+                        }
+                            if(opc==1 || opc==2 || opc==6)
+                        {
+                        //poner aqui agregar a la charola
+                            penvase=menu1.PrecioEnvase(0, tam);
+                            CafesCalientesPedidos=R1.OrdenarCafeAmericano(cant,penvase);
+                            TotalCafesCalientes=R1.CalcularTotalCafesCalientes(TotalCafesCalientes, CafesCalientesPedidos);
+                            TotalExtras=R1.CalcularTotalExtras(pexazucar, pexcrema, pexcafe);
+                            opc=4;
+                        //poner aqui agregar a charola
+                        }
+                        }while(opc!=4);
+                        opc=0;
+                    }//Ordenar cafe Americano FIN
+                    if(opc==4){
+                    opc=0;
+                    }else{
+                    opc=2;
                     }
-                }
-                opc=5;
+                }//Cafes Calientes FIN
+                opc=0;
+                //totalCafeCaliente INICIO
+                //totalCafeCaliente FIN
             }
             //CAFES OPCION 1 FIN
             //Postres OPCION 2 INICIO
@@ -101,8 +268,7 @@ public class LeVontVivant {
             //Ver Orden Opcion 3 INICIO.
             while(opc!=4 && opc==3)
             {
-                System.out.println("OPCION 3");
-                opc=5;
+                //R1.MostrarCharola(0, 0, 0, 0, 0);
             }
             //Ver Orden Opcion 3 FIN
         }

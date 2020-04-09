@@ -47,5 +47,106 @@ return this.codigo=cod;
 }
     //set/get codigo FIN
 
+//Agregar objetos a la charrola INICIO
+    //cafes
+          //capuccino
+public float OrdenarCafeCapuccino(float cant, float penvase){
+    String Cafe=" Café Capuccino";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
+public float OrdenarCafeMokaccino(float cant, float penvase){
+    String Cafe=" Café Mokaccino";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
+public float OrdenarCafeAmericano(float cant, float penvase){
+    String Cafe=" Café Americano";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
+//Agregar objetos a la charrola FIN
+//Charola INICIO
+public void MostrarCharola(float Total, float SubTotal, float IVA,float TotalCafes, float TotalPostres){
+    System.out.println("");
+    System.out.println("");
+    System.out.println("===== Cafeteria LeVonViVant =====");
+    System.out.println("Le presento su orden a detalle");
+    System.out.println("=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=");
+    System.out.println("Cafes Calientes............");
+    System.out.println("     Capuccino...........");
+    System.out.println("     Mokaccino...........");
+    System.out.println("     Americano...........");
+    System.out.println("Cafes Frios................");
+    System.out.println("     Capuccino...........");
+    System.out.println("     Mokaccino...........");
+    System.out.println("     Americano...........");
+    System.out.println("Total de Bebidas................."+TotalCafes);
+    System.out.println("Postres Calientes..........");
+    System.out.println("     Capuccino...........");
+    System.out.println("     Mokaccino...........");
+    System.out.println("     Americano...........");
+    System.out.println("Postres Frios..............");
+    System.out.println("     Capuccino...........");
+    System.out.println("     Mokaccino...........");
+    System.out.println("     Americano...........");
+    System.out.println("Total de Postres................."+TotalPostres);
+    System.out.println("               SubTotal.........."+SubTotal);
+    System.out.println("               IVA..............."+IVA);
+    System.out.println("               Total............."+Total);
+}
+//Charola FINAL
+//Calcular Costos INICIO
+public float CalcularTotalExtras(float pexazucar,float  pexcrema,float  pexcafe){
+    float TotalExtras=pexazucar+pexcrema+pexcafe;
+    return TotalExtras;
+}
+public float CalcularTotal(float SubTotal,float IVA){
+    float Total=SubTotal+IVA;  
+    return Total;
+}
+public float CalcularSubTotal( float TotalExtras, float TotalPedido){
+    float SubTotal=TotalExtras+TotalPedido;
+    return SubTotal;
+}
+public float CalcularTotalPedido(float TotalCafes, float TotalPostres){
+    float TotalPedido=TotalCafes+TotalPostres;
+    return TotalPedido;
+}
+public float CalcularTotalCafes(float TotalCafes,float CafesCalientesPedidos, float CafesFriosPedidos){
+    TotalCafes=TotalCafes+CafesFriosPedidos+CafesCalientesPedidos;
+    return TotalCafes;
+}
+public float CalcularTotalCafesCalientes(float TotalCafesCalientes,float CafesCalientesPedidos){
+    TotalCafesCalientes=TotalCafesCalientes+CafesCalientesPedidos;
+    return TotalCafesCalientes;
+}
+public float CalcularTotalCafesFrios(float TotalCafesFrios,float CafesFriosPedidos){
+    TotalCafesFrios=TotalCafesFrios+CafesFriosPedidos;
+    return TotalCafesFrios;
+}
+public float CalcularTotalPostres(float TotalPostres,float PostresCalientesPedidos, float PostresFriosPedidos){
+    TotalPostres=TotalPostres+PostresCalientesPedidos+PostresFriosPedidos;
+    return TotalPostres;
+}
+public float CalcularTotalPostresFrios(float TotalPostresFrios,float PostresFriosPedidos){
+    TotalPostresFrios=TotalPostresFrios+PostresFriosPedidos;
+    return TotalPostresFrios;
+}
+public float CalcularTotalPostresCalientes(float TotalPostresCalientes,float PostresCalientesPedidos){
+    TotalPostresCalientes=TotalPostresCalientes+PostresCalientesPedidos;
+    return TotalPostresCalientes;
+}
+public float CalcularIVA(float SubTotal){
+    float IVA=(SubTotal*0.16f)+SubTotal;
+    return IVA;
+}
+//Calcular Costos FIN
 }
 
