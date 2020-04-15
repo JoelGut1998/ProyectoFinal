@@ -1,4 +1,4 @@
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 package levontvivant;
 
 import LeVonVivantCafes.LeVonVivantCafeCalienteCapuccino;
@@ -29,6 +29,7 @@ public class LeVontVivant {
         float TotalCafesCalientes=0f;
         float CafesCalientesPedidos=0f;
         float TotalExtras=0f;
+        float TotalCafes=0f;
         //variables generales FIN
         
         //robot INICO
@@ -46,15 +47,26 @@ public class LeVontVivant {
             {
                 menu1.MenuCafe();
                 opc=teclado.nextInt();
-                while(opc!=3 && opc==1)
+                while(opc!=4 && opc==1)//Cafes Frios INICIO
                 {
                     menu1.MenuCafeFrio();
                     opc=teclado.nextInt();
-                }
+                    switch (opc){
+                        case 1://Cafe Canela/chile
+                            break;
+                        case 2://Frapuccino
+                            break;
+                        case 3://Canela y cajeta
+                            break;
+                            
+                    }
+                    
+                }//Cafes Frios FIN
+                
                 while(opc!=3 && opc==2)//Cafes calientes INICIO
                 {
                     menu1.MenuCafeCaliente();
-                    opc=teclado.nextInt();
+                    opc=teclado.nextInt(); 
                     while(opc!=4 && opc==1)//ordenar Cafe capuccino INICIO
                     {
                         do
@@ -121,7 +133,7 @@ public class LeVontVivant {
                     }//Ordenar cafe capuccino FIN
                     while(opc!=4 && opc==2)//ordenar Cafe Mokaccino INICIO
                     {
-                        do
+                         do
                         {
                         cant=menu1.Cantidad(1);
                         for(float i=1;i<=cant;i=i+1){
@@ -129,11 +141,11 @@ public class LeVontVivant {
                         System.out.println("Preparacion de cafe No. "+i+"/"+cant);
                         System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
                         System.out.println("");
-                        LeVonVivantCafeCalienteCapuccino capuccino = new LeVonVivantCafeCalienteCapuccino();
-                        gcrema=capuccino.setCrema(15);
-                        gcafe=capuccino.setCafe(15);
-                        gazucar=capuccino.setAzucar(5);
-                        tam=capuccino.setTamano(955);
+                        LeVonVivantCafeCalienteCapuccino mokaccino = new LeVonVivantCafeCalienteCapuccino();
+                        gcrema=mokaccino.setCrema(5);
+                        gcafe=mokaccino.setCafe(15);
+                        gazucar=mokaccino.setAzucar(5);
+                        tam=mokaccino.setTamano(955);
                         menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema, "Convencional");
                         opc=teclado.nextInt();
                         if(opc==1)
@@ -193,11 +205,11 @@ public class LeVontVivant {
                         System.out.println("Preparacion de cafe No. "+i+"/"+cant);
                         System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
                         System.out.println("");
-                        LeVonVivantCafeCalienteCapuccino capuccino = new LeVonVivantCafeCalienteCapuccino();
-                        gcrema=capuccino.setCrema(0);
-                        gcafe=capuccino.setCafe(30);
-                        gazucar=capuccino.setAzucar(5);
-                        tam=capuccino.setTamano(655);
+                        LeVonVivantCafeCalienteCapuccino americano = new LeVonVivantCafeCalienteCapuccino();
+                        gcrema=americano.setCrema(0);
+                        gcafe=americano.setCafe(30);
+                        gazucar=americano.setAzucar(0);
+                        tam=americano.setTamano(655);
                         menu1.MenuPrepararCafeCaliente(gazucar, gcafe, tam, gcrema, "Convencional");
                         opc=teclado.nextInt();
                         if(opc==1)
@@ -254,10 +266,12 @@ public class LeVontVivant {
                     }
                 }//Cafes Calientes FIN
                 opc=0;
-                //totalCafeCaliente INICIO
-                //totalCafeCaliente FIN
+                
+                //totalCafes INICIO
+                //totalCafes FIN
             }
             //CAFES OPCION 1 FIN
+            
             //Postres OPCION 2 INICIO
             while(opc!=4 && opc==2)
             {
@@ -265,6 +279,7 @@ public class LeVontVivant {
                 opc=5;
             }
             //Postres Opcion 2 FIN
+            
             //Ver Orden Opcion 3 INICIO.
             while(opc!=4 && opc==3)
             {

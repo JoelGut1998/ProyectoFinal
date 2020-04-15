@@ -37,9 +37,10 @@ public class Menu {
         System.out.println("===== Cafeteria LeVonViVant =====");
         System.out.println("Te muestro las bebidas cafeteras frias que tengo disponibles...");
         System.out.println("=o=o=o=o=o=o=o=o=o=");
-        System.out.println("1.Cafes Frios");
-        System.out.println("2.Cafes Calientes");
-        System.out.println("3.Regresar");
+        System.out.println("1.Canela y chile...$16");
+        System.out.println("2.Frapuccino.......$25");
+        System.out.println("3.Canela y Cajeta..$30");
+        System.out.println("4.Regresar");
         System.out.println("=o=o=o=o=o=o=o=o=o=");
         System.out.println("Porfavor indique el numero de la opcion que desea en su teclado");
     }
