@@ -56,7 +56,7 @@ public class LeVontVivant {
                         case 1://Cafe Canela/chile
                                menu1.Cantidad(0);
                                for(float i=1;i<=cant;i=i+1){
-                                   LeVonVivantCafeFrio CanelaC = new LeVonVivantCafeFrio(25,15,10,10);
+                                   LeVonVivantCafeFrio CanelaC = new LeVonVivantCafeFrio(25,5,15,5); 
                                }
                             break;
                         case 2://Frapuccino
