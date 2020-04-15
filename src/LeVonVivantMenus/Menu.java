@@ -44,6 +44,19 @@ public class Menu {
         System.out.println("=o=o=o=o=o=o=o=o=o=");
         System.out.println("Porfavor indique el numero de la opcion que desea en su teclado");
     }
+        public void MenuPostres(){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("===== Cafeteria LeVonViVant =====");
+        System.out.println("Nos agrada tener aqui asi que el postre corre por nuestra cuenta");
+        System.out.println("=o=o=o=o=o=o=o=o=o=");
+        System.out.println("1.Flan Napolitano");
+        System.out.println("2.Dona de Moka");
+        System.out.println("3.Panque de Pasas");
+        System.out.println("4.No quiero postre ¡Gracias!");
+        System.out.println("=o=o=o=o=o=o=o=o=o=");
+        System.out.println("Porfavor indique el numero de la opcion que desea en su teclado");
+    }
     public void MenuCafeCaliente(){
         System.out.println("");
         System.out.println("");
@@ -88,6 +101,60 @@ public class Menu {
         System.out.println("2-No");
         System.out.println("=o=o=o=o=o=o=o=o=o=");
         System.out.println("Porfavor indique el numero de la opcion que desea en su teclado");
+    }
+    public void MenuPrepararCafeCanelaC(int ch, int ca, int i1, int i2, int tam){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("===== Cafeteria LeVonViVant =====");
+        System.out.println("Su cafe se preparara con la sigueinte receta tradicional");
+        System.out.println("=o=o=o=o=o=o=o=o=o=");
+        System.out.println("**Cantidad de azucar**");
+        System.out.println("Cantidad: "+ca+" g de azucar ");
+        System.out.println("**Cantidad de Hielo**");
+        System.out.println("Cantidad: "+ch+" g");
+        System.out.println("**Tamaño de envase**");
+        System.out.println("Cantidad: "+tam+ " ml");
+        System.out.println("**Cantidad de Cajeta**");
+        System.out.println("Cantidad: "+i1+" g");
+        System.out.println("**Cantidad de Chile**");
+        System.out.println("Cantidad: "+i2+" g");
+        System.out.println("Preparando cafe...");
+    }
+    public void MenuPrepararCafeFrapuccino(int ch, int ca, int i1, int i2, int tam){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("===== Cafeteria LeVonViVant =====");
+        System.out.println("Su cafe se preparara con la sigueinte receta tradicional");
+        System.out.println("=o=o=o=o=o=o=o=o=o=");
+        System.out.println("**Cantidad de azucar**");
+        System.out.println("Cantidad: "+ca+" g de azucar ");
+        System.out.println("**Cantidad de Hielo**");
+        System.out.println("Cantidad: "+ch+" g");
+        System.out.println("**Tamaño de envase**");
+        System.out.println("Cantidad: "+tam+ " ml");
+        System.out.println("**Cantidad de Crema**");
+        System.out.println("Cantidad: "+i1+" g");
+        System.out.println("**Cantidad de Cafe Negro**");
+        System.out.println("Cantidad: "+i2+" g");
+        System.out.println("Preparando cafe...");
+    }
+    public void MenuPrepararCafeCanCaj(int ch, int ca, int i1, int i2, int tam){
+        System.out.println("");
+        System.out.println("");
+        System.out.println("===== Cafeteria LeVonViVant =====");
+        System.out.println("Su cafe se preparara con la sigueinte receta tradicional");
+        System.out.println("=o=o=o=o=o=o=o=o=o=");
+        System.out.println("**Cantidad de azucar**");
+        System.out.println("Cantidad: "+ca+" g de azucar ");
+        System.out.println("**Cantidad de Hielo**");
+        System.out.println("Cantidad: "+ch+" g");
+        System.out.println("**Tamaño de envase**");
+        System.out.println("Cantidad: "+tam+ " ml");
+        System.out.println("**Cantidad de Canela**");
+        System.out.println("Cantidad: "+i1+" g");
+        System.out.println("**Cantidad de Cajeta**");
+        System.out.println("Cantidad: "+i2+" g");
+        System.out.println("Preparando cafe...");
     }
     public void MenuPersonalizableCafeCaliente(int gazucar, int gcafe, int Tamaño, int Gcrema, String tazucar){
         System.out.println("===== Cafeteria LeVonViVant =====");

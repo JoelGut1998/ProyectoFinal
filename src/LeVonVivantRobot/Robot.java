@@ -1,11 +1,15 @@
 
 package LeVonVivantRobot;
 
+import java.util.Scanner;
+
 public class Robot{
     
     private String nombre;
     private String tienda;
     private int codigo;
+    
+Scanner t= new Scanner(System.in);
     
 //Constructor para crear un nuevo robot vacio INICO
      public Robot(){
@@ -71,35 +75,51 @@ public float OrdenarCafeAmericano(float cant, float penvase){
     float CafesPedidos=penvase*cant;
     return CafesPedidos;
 }
+public float OrdenarCafeCanelaC(float cant, float penvase){
+    String Cafe=" Cafe Canela/Chile";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
+public float OrdenarCafeFrapuccino(float cant, float penvase){
+    String Cafe=" Cafe Frapuccino";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
+public float OrdenarCafeCanCaj(float cant, float penvase){
+    String Cafe=" Cafe Canela/Cajeta";
+    System.out.println("Se agregaron correctamente: ");
+    System.out.println(cant+Cafe);
+    float CafesPedidos=penvase*cant;
+    return CafesPedidos;
+}
 //Agregar objetos a la charrola FIN
 //Charola INICIO
-public void MostrarCharola(float Total, float SubTotal, float IVA,float TotalCafes, float TotalPostres){
+public void MostrarCharola(float Total, float SubTotal, float IVA,float TotalCafes, float TotalPostres,float TotalCafesCalientes, float TotalCafesFrios){
     System.out.println("");
     System.out.println("");
     System.out.println("===== Cafeteria LeVonViVant =====");
     System.out.println("Le presento su orden a detalle");
     System.out.println("=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=o=");
-    System.out.println("Cafes Calientes............");
-    System.out.println("     Capuccino...........");
-    System.out.println("     Mokaccino...........");
-    System.out.println("     Americano...........");
-    System.out.println("Cafes Frios................");
-    System.out.println("     Capuccino...........");
-    System.out.println("     Mokaccino...........");
-    System.out.println("     Americano...........");
-    System.out.println("Total de Bebidas................."+TotalCafes);
-    System.out.println("Postres Calientes..........");
-    System.out.println("     Capuccino...........");
-    System.out.println("     Mokaccino...........");
-    System.out.println("     Americano...........");
-    System.out.println("Postres Frios..............");
-    System.out.println("     Capuccino...........");
-    System.out.println("     Mokaccino...........");
-    System.out.println("     Americano...........");
-    System.out.println("Total de Postres................."+TotalPostres);
+    System.out.println("Cafes Calientes............$"+TotalCafesCalientes);
+    System.out.println("Cafes Frios................$"+TotalCafesFrios);
+    System.out.println("Total de Bebidas.................$"+TotalCafes);
+    System.out.println("Total de Postres.................$0");
     System.out.println("               SubTotal.........."+SubTotal);
     System.out.println("               IVA..............."+IVA);
     System.out.println("               Total............."+Total);
+}
+public void Pagar(){
+    System.out.println("Ingresa el numero de tarjeta de Debito/Credito");
+    int tarjeta=t.nextInt();
+    System.out.println("Ingresa la fecha de vencimiento");
+    int fecha=t.nextInt();
+    System.out.println("Ingresa el CVV");
+    int cvv=t.nextInt();
+    System.out.println("preparando tu orden disfruta tus bebidas y que tengas un buen dia");
 }
 //Charola FINAL
 //Calcular Costos INICIO

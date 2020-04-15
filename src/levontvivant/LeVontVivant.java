@@ -31,6 +31,7 @@ public class LeVontVivant {
         float CafesCalientesPedidos=0f;
         float TotalExtras=0f;
         float TotalCafes=0f;
+        float TotalCafesFrios=0f;
         //variables generales FIN
         
         //robot INICO
@@ -54,15 +55,34 @@ public class LeVontVivant {
                     opc=teclado.nextInt();
                     switch (opc){
                         case 1://Cafe Canela/chile
-                               menu1.Cantidad(0);
-                               for(float i=1;i<=cant;i=i+1){
-                                   LeVonVivantCafeFrio CanelaC = new LeVonVivantCafeFrio(25,5,15,5);
-                                   int ch=CanelaC.getHielo();
-                               }
+                                LeVonVivantCafeFrio CanelaC = new LeVonVivantCafeFrio(25,5,15,5);
+                                menu1.MenuPrepararCafeCanelaC(25, 5, 15, 5, 255);
+                                penvase=menu1.PrecioEnvase(0, 255);
+                                cant=menu1.Cantidad(0);
+                                for(float i=1;i<=cant;i=i+1){
+                                  float CafesFriosPedidos=R1.OrdenarCafeCanelaC(cant, penvase);
+                                TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
+                                }
                             break;
                         case 2://Frapuccino
+                            LeVonVivantCafeFrio Frapuccino = new LeVonVivantCafeFrio(25,15,10,10);
+                                menu1.MenuPrepararCafeFrapuccino(25, 15, 10, 10, 655);
+                                penvase=menu1.PrecioEnvase(0, 655);
+                                cant=menu1.Cantidad(0);
+                                for(float i=1;i<=cant;i=i+1){
+                                  float CafesFriosPedidos=R1.OrdenarCafeFrapuccino(cant, penvase);
+                                TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
+                                }
                             break;
                         case 3://Canela y cajeta
+                            LeVonVivantCafeFrio CanCaj = new LeVonVivantCafeFrio(25,5,15,5);
+                                menu1.MenuPrepararCafeCanCaj(25, 15, 15, 15, 955);
+                                penvase=menu1.PrecioEnvase(0, 955);
+                                cant=menu1.Cantidad(0);
+                                for(float i=1;i<=cant;i=i+1){
+                                  float CafesFriosPedidos=R1.OrdenarCafeCanCaj(cant, penvase);
+                                TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
+                                }
                             break;
                       
                     }
@@ -274,6 +294,7 @@ public class LeVontVivant {
                 opc=0;
                 
                 //totalCafes INICIO
+                TotalCafes=R1.CalcularTotalCafes(TotalCafes, TotalCafesCalientes, TotalCafesFrios);
                 //totalCafes FIN
             }
             //CAFES OPCION 1 FIN
@@ -281,21 +302,38 @@ public class LeVontVivant {
             //Postres OPCION 2 INICIO
             while(opc!=4 && opc==2)
             {
-                System.out.println("OPCION 2");
-                opc=5;
+                menu1.MenuPostres();
+                opc=teclado.nextInt();
+                switch(opc){
+                    case 1:
+                        System.out.println("Has elegido Flan Napolitano...Disfrutalo!");
+                        break;
+                    case 2:
+                        System.out.println("Has elegido Dona de Moka...Disfrutala!");
+                        break;
+                    case 3:
+                        System.out.println("Has elegido Panque de Pasas...Disfrutalo!");
+                        break;
+                }
             }
             //Postres Opcion 2 FIN
             
             //Ver Orden Opcion 3 INICIO.
             while(opc!=4 && opc==3)
             {
-                //R1.MostrarCharola(0, 0, 0, 0, 0);
+                float TotalPedido=R1.CalcularTotalPedido(TotalCafes, 0);
+                float SubTotal=R1.CalcularSubTotal(TotalExtras, TotalPedido);
+                float IVA=R1.CalcularIVA(SubTotal);
+                float Total=R1.CalcularTotal(SubTotal, IVA);
+                R1.MostrarCharola(Total, SubTotal, IVA, TotalCafes, TotalExtras, TotalCafesCalientes, TotalCafesFrios);
+                opc=0;
             }
             //Ver Orden Opcion 3 FIN
         }
         while (opc!=4);
         //menus FIN
         //Proceder pago Inicio
+        R1.Pagar();
         //proceder a pago fin
     }
     
