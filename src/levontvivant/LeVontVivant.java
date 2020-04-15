@@ -60,7 +60,7 @@ public class LeVontVivant {
                                 penvase=menu1.PrecioEnvase(0, 255);
                                 cant=menu1.Cantidad(0);
                                 for(float i=1;i<=cant;i=i+1){
-                                  float CafesFriosPedidos=R1.OrdenarCafeCanelaC(cant, penvase);
+                                float CafesFriosPedidos=R1.OrdenarCafeCanelaC(cant, penvase);
                                 TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
                                 }
                             break;
@@ -70,7 +70,7 @@ public class LeVontVivant {
                                 penvase=menu1.PrecioEnvase(0, 655);
                                 cant=menu1.Cantidad(0);
                                 for(float i=1;i<=cant;i=i+1){
-                                  float CafesFriosPedidos=R1.OrdenarCafeFrapuccino(cant, penvase);
+                                float CafesFriosPedidos=R1.OrdenarCafeFrapuccino(cant, penvase);
                                 TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
                                 }
                             break;
@@ -80,7 +80,7 @@ public class LeVontVivant {
                                 penvase=menu1.PrecioEnvase(0, 955);
                                 cant=menu1.Cantidad(0);
                                 for(float i=1;i<=cant;i=i+1){
-                                  float CafesFriosPedidos=R1.OrdenarCafeCanCaj(cant, penvase);
+                                float CafesFriosPedidos=R1.OrdenarCafeCanCaj(cant, penvase);
                                 TotalCafesFrios=R1.CalcularTotalCafesFrios(TotalCafesFrios, CafesFriosPedidos);
                                 }
                             break;
