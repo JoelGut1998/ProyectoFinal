@@ -2,6 +2,7 @@
 package levontvivant;
 
 import LeVonVivantCafes.LeVonVivantCafeCalienteCapuccino;
+import LeVonVivantCafes.LeVonVivantCafeFrio;
 import LeVonVivantMenus.Menu;
 import LeVonVivantRobot.Robot;
 import java.util.Scanner;
@@ -53,12 +54,16 @@ public class LeVontVivant {
                     opc=teclado.nextInt();
                     switch (opc){
                         case 1://Cafe Canela/chile
+                               menu1.Cantidad(0);
+                               for(float i=1;i<=cant;i=i+1){
+                                   LeVonVivantCafeFrio CanelaC = new LeVonVivantCafeFrio(25,15,10,10);
+                               }
                             break;
                         case 2://Frapuccino
                             break;
                         case 3://Canela y cajeta
                             break;
-                            
+                      
                     }
                     
                 }//Cafes Frios FIN
